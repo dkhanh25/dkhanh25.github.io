@@ -41,13 +41,47 @@
 
     <section class="course">
       <h1>SƠ ĐỒ THÙNG RÁC TRƯỜNG BÁCH KHOA</h1>
-        <div class="campus-col">
-          <img src="./images/map.png" alt="">
-          <div class="text-block">
-            <h5> Thùng rác 1: </h5>
-            <h8> Đầy</h8>
-          </div>
-          </div>
+        <div>   
+          <img src="./images/map.png" usemap="#image-map">
+          <map name="image-map">
+              <area shape="circle" coords="164,200,30" title="Circle" id="rect">
+          </map>
+        </svg>
+        </div>
+
+        
+
+
+
+          <script>
+            // When the user clicks on <div>, open the popup
+            function myFunction() {
+              alert("hahaha");
+            }
+      
+            function showData(data) {
+              var popup = document.getElementById("myPopup");
+              popup.textContent = data[0][0]; // assuming the data is in the first cell of the first row
+              popup.classList.toggle("show");
+            }
+
+            //https://docs.google.com/spreadsheets/d/1WlH7dcRNeIYNvG4e0TGHvJads6KULYOR2kfSLNz4Xyo/edit#gid=0
+            document.getElementById("rect").addEventListener("click", function() {
+    // Replace 'spreadsheetId' and 'range' with your actual values
+            var url = "https://sheets.googleapis.com/v4/spreadsheets/1WlH7dcRNeIYNvG4e0TGHvJads6KULYOR2kfSLNz4Xyo/values/A2:B8?key=AIzaSyCCr-SQHp7a8hy9oJfL1WZmSAiQOgDt2Ng";
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            var alertText = data.values[0][1]; // Assuming the data is in the first cell of the first row
+            alert("Tình trạng thùng rác: " + alertText);
+        })
+        .catch(error => console.error('Error:', error));
+});
+
+          </script>
+      
+
+
 
 
 
@@ -79,5 +113,7 @@
     </section>
 
     <script src="script.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
   </body>
 </html>
