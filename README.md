@@ -1,1 +1,1 @@
-garbage website isnt trash
+# educational.github.io

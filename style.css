@@ -2,7 +2,7 @@
   font-family: "Noto Serif", serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 .header {
   min-height: 100vh;
@@ -184,7 +184,7 @@ h3 {
 }
 .campus-col img {
   width: 100%;
-  display: block;
+  height: 100%;
 }
 .layer {
   background: transparent;

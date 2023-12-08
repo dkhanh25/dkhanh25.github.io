@@ -1,0 +1,13 @@
+
+
+
+LINK (NEU CAN): https://knxhduan-default-rtdb.firebaseio.com/
+
+API KEY: AIzaSyAhEQuLcYDVcEPXHGw9XlYykvHwFYiucmE
+
+{
+  "rules": {
+    ".read": "now < 1699376400000",  // 2023-11-8
+    ".write": "now < 1699376400000",  // 2023-11-8
+  }
+}
